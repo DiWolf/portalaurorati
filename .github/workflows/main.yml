@@ -34,8 +34,8 @@ jobs:
           cp -r locales deploy/
           cp package.json package-lock.json deploy/
 
-      - name: Install production deps into deploy/
-        run: npm ci --omit=dev --prefix ./deploy
+      # - name: Install production deps into deploy/
+      #   run: npm ci --omit=dev --prefix ./deploy
 
       # Opcional: si usas Passenger/Node en cPanel y tu entrypoint es app.js en build/
       # crea un .htaccess mínimo para redirigir a Passenger (ajústalo según tu setup)
