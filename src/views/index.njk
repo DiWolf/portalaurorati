@@ -1,1 +1,197 @@
-<h1>Portal en mantenimiento</h1>
+{% extends "templates/portal.njk" %}
+
+{% block content %}
+
+<section id="homeone_banner">
+  <div class="banner-slider owl-theme owl-carousel">
+    <div class="banner-item banner-img-one">
+      <div class="container">
+        <div class="banner_one_inner">
+          <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+              <div class="banner-text">
+                <h1>Conecta tu negocio <br />al futuro</h1>
+                <p>
+                  Automatiza procesos, integra tus canales digitales y asegura
+                  tu operación con soluciones basadas en tecnología Microsoft.
+                  Todo desde un solo lugar, pensado para negocios que buscan
+                  crecer.
+                </p>
+                <a class="btn btn-theme" href="agenda.html">
+                  Quiero crecer con AuroraTI
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how_work_three">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section_heading_three_center">
+          <h5>Servicios</h5>
+          <h2>Soluciones tecnológicas diseñadas para crecer contigo</h2>
+        </div>
+      </div>
+    </div>
+    <div class="service_wrapper_top">
+      <div class="row">
+        <!-- Automatización -->
+        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+          <div class="service-card">
+            <img src="/public/assets/img/auroraservicios/automatizar1.png" alt="Automatización de procesos" />
+            <div class="service-caption">
+              <h3>Automatiza y gana tiempo</h3>
+              <p>
+                Ahorra tiempo y evita errores automatizando tareas repetitivas. 
+                Creamos flujos inteligentes con herramientas de Microsoft que trabajan por ti, incluso mientras duermes.
+              </p>
+              <ul class="service-bullets">
+                <li><i class="fas fa-clock"></i> Recordatorios automáticos</li>
+                <li><i class="fas fa-envelope-open-text"></i> Envío de reportes por correo</li>
+                <li><i class="fas fa-database"></i> Carga de datos sin esfuerzo</li>
+              </ul>
+              <a href="automatizacion.html" class="read_more_btn">
+                Ver más <i class="fas fa-long-arrow-alt-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desarrollo -->
+        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+          <div class="service-card">
+            <img src="/public/assets/img/auroraservicios/desarrollo.png" alt="Software a la medida" />
+            <div class="service-caption">
+              <h3>Construimos el sistema que tu negocio necesita</h3>
+              <p>
+                Creamos sistemas únicos que se adaptan a tu negocio. 
+                Desde el control de usuarios hasta reportes y módulos especiales, todo hecho a tu medida.
+              </p>
+              <ul class="service-bullets">
+                <li><i class="fas fa-cogs"></i> Paneles administrativos personalizados</li>
+                <li><i class="fas fa-user-shield"></i> Control de usuarios y permisos</li>
+                <li><i class="fas fa-chart-line"></i> Reportes y métricas clave</li>
+              </ul>
+              <a href="desarrollo-medida.html" class="read_more_btn">
+                Ver más <i class="fas fa-long-arrow-alt-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Integración -->
+        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+          <div class="service-card">
+            <img src="/public/assets/img/auroraservicios/integracion.png" alt="Integración de plataformas" />
+            <div class="service-caption">
+              <h3>Conecta todo y trabaja sin fricciones</h3>
+              <p>
+                Conecta todo en un solo lugar: sistemas, correos, Excel, WhatsApp y más. 
+                Así tu información fluye sin que tengas que mover un dedo.
+              </p>
+              <ul class="service-bullets">
+                <li><i class="fab fa-whatsapp"></i> WhatsApp como sistema de atención</li>
+                <li><i class="fas fa-file-excel"></i> Excel conectado a tus datos reales</li>
+                <li><i class="fas fa-paper-plane"></i> Correos automatizados desde formularios</li>
+              </ul>
+              <a href="integracion-canales.html" class="read_more_btn">
+                Ver más <i class="fas fa-long-arrow-alt-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="audience_section py-5" style="background-color: #f9f9f9">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center mb-4">
+        <h5>¿Para quién es AuroraTI?</h5>
+        <h2>Soluciones pensadas según tu tipo de negocio</h2>
+      </div>
+    </div>
+    <div class="row align-items-stretch text-center">
+      <!-- Emprendedores -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="p-4 h-100 shadow-sm bg-white rounded">
+          <img
+            src="/public/assets/img/auroraservicios/emprendedor.png"
+            alt="Emprendedores"
+            class="mb-3"
+            style="max-height: 120px; object-fit: contain;"
+          />
+          <h4>Emprendedores</h4>
+          <p>
+            Automatiza tareas desde tu primer sistema, sin depender de terceros
+            y enfócate en lo importante para crecer.
+          </p>
+          <a href="perfil-emprendedor.html"
+             class="btn btn-primary btn-sm mt-2"
+             style="padding: 8px 16px; border-radius: 4px; background-color: #2f6fc2; border: none; transition: background-color 0.3s ease;"
+             onmouseover="this.style.backgroundColor='#4a89e7';"
+             onmouseout="this.style.backgroundColor='#2f6fc2';">
+            Ver más
+          </a>
+        </div>
+      </div>
+
+      <!-- PYMES -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="p-4 h-100 shadow-sm bg-white rounded">
+          <img
+            src="/public/assets/img/auroraservicios/pyme.png"
+            alt="PYMES"
+            class="mb-3"
+            style="max-height: 120px; object-fit: contain;"
+          />
+          <h4>PYMES</h4>
+          <p>
+            Optimiza tus procesos, gestiona tus datos y escala tu operación con
+            soluciones hechas a medida.
+          </p>
+          <a href="perfil-pyme.html"
+             class="btn btn-primary btn-sm mt-2"
+             style="padding: 8px 16px; border-radius: 4px; background-color: #2f6fc2; border: none; transition: background-color 0.3s ease;"
+             onmouseover="this.style.backgroundColor='#4a89e7';"
+             onmouseout="this.style.backgroundColor='#2f6fc2';">
+            Ver más
+          </a>
+        </div>
+      </div>
+
+      <!-- Gobierno -->
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="p-4 h-100 shadow-sm bg-white rounded">
+          <img
+            src="/public/assets/img/auroraservicios/gobierno.png"
+            alt="Gobierno"
+            class="mb-3"
+            style="max-height: 120px; object-fit: contain;"
+          />
+          <h4>Gobierno</h4>
+          <p>
+            Soluciones seguras para cumplir con procesos internos, interoperabilidad y cumplimiento normativo.
+          </p>
+          <a href="perfil-gobierno.html"
+             class="btn btn-primary btn-sm mt-2"
+             style="padding: 8px 16px; border-radius: 4px; background-color: #2f6fc2; border: none; transition: background-color 0.3s ease;"
+             onmouseover="this.style.backgroundColor='#4a89e7';"
+             onmouseout="this.style.backgroundColor='#2f6fc2';">
+            Ver más
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

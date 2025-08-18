@@ -1,0 +1,24 @@
+:root {
+    --main-theme-color: #1E56A0;
+    --heading-color: #0A2E52;
+    --paragraph-color: #5f6a75;
+}
+
+/*text color*/
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
