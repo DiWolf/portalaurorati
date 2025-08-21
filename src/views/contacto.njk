@@ -1,0 +1,137 @@
+{% extends "templates/portal.njk" %}
+{% block content %}
+    <!-- Inner Banner Area Strat -->
+    <section id="inner_area_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner_banner_text">
+                        <h2>Contáctanos</h2>
+                        <ul>
+                            <li>
+                                <a href="index.html">Inicio</a>
+                            </li>
+                            <li>></li>
+                            <li class="active">Contáctanos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contacto -->
+    <section id="contact_area_main">
+        <div class="container">
+            <div class="contact_form_info_area">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="contact_info_wrapper">
+                            <div class="contact_item">
+                                <h5>Dirección</h5>
+                                <p>Flamenco 16, Col. Pescadores, Lázaro Cárdenas, Michoacán</p>
+                            </div>
+                            <div class="contact_item">
+                                <h5>Llámanos</h5>
+                                <p>Tel: 753 133 85 10</p>
+                            </div>
+                            <div class="contact_item">
+                                <h5>Envíanos un correo</h5>
+                                <p>javier@aurorati.mx</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="contact_form_main_two">
+                            <h3>Solicitar cotización</h3>
+                            {% if success %}
+                                <div class="alert alert-success">{{ success }}</div>
+                            {% endif %}
+                            {% if errors.global %}
+                                <div class="alert alert-danger">{{ errors.global }}</div>
+                            {% endif %}
+                            <form action="/contacto" method="post" novalidate>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control {% if errors.nombre %}is-invalid{% endif %}" name="nombre" placeholder="Nombre" value="{{ old.nombre | default('') }}" required>
+                                                {% if errors.nombre %}
+                                                    <div class="invalid-feedback" style="display:block">{{ errors.nombre }}</div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" value="{{ old.apellidos | default('') }}"></div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control {% if errors.email %}is-invalid{% endif %}" name="email" placeholder="Correo electrónico" value="{{ old.email | default('') }}" required>
+                                                        {% if errors.email %}
+                                                            <div class="invalid-feedback" style="display:block">{{ errors.email }}</div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="tel" class="form-control" name="telefono" placeholder="Teléfono (opcional)" value="{{ old.telefono | default('') }}"></div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <select class="form-control {% if errors.servicio %}is-invalid{% endif %}" name="servicio" required>
+                                                                <option value="">Selecciona un servicio</option>
+                                                                <option value="sistemas" {% if old.servicio == 'sistemas' %} selected {% endif %}>Sistemas</option>
+                                                                <option value="web" {% if old.servicio == 'web' %} selected {% endif %}>Desarrollo Web</option>
+                                                                <option value="chatbot" {% if old.servicio == 'chatbot' %} selected {% endif %}>Chatbots con IA</option>
+                                                                <option value="automatizacion" {% if old.servicio == 'automatizacion' %} selected {% endif %}>Automatización de procesos</option>
+                                                                <option value="cloud" {% if old.servicio == 'cloud' %} selected {% endif %}>Infraestructura en la nube (Azure)</option>
+                                                                <option value="consultoria" {% if old.servicio == 'consultoria' %} selected {% endif %}>Consultoría Tecnológica</option>
+                                                                <option value="otro" {% if old.servicio == 'otro' %} selected {% endif %}>Otro</option>
+                                                            </select>
+                                                            {% if errors.servicio %}
+                                                                <div class="invalid-feedback" style="display:block">{{ errors.servicio }}</div>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <textarea
+                                                                class="form-control {% if errors.mensaje %}is-invalid{% endif %}"
+                                                                name="mensaje"
+                                                                rows="5"
+                                                                placeholder="Escribe tu mensaje aquí"
+                                                                required>{{ old.mensaje | default('') }}</textarea>
+                                                            {% if errors.mensaje %}
+                                                                <div class="invalid-feedback" style="display:block">{{ errors.mensaje }}</div>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                    {# Honeypot (oculto para humanos) #}
+                                                    <div style="position:absolute;left:-5000px;opacity:0;height:0;overflow:hidden;">
+                                                        <label>Si ves este campo, no lo llenes</label>
+                                                        <input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+                                                        {# Turnstile #}
+                                                        <div class="cf-turnstile" data-sitekey="{{ turnstileSiteKey }}" data-theme="auto" data-size="flexible"></div>
+                                                        {% if errors.captcha %}
+                                                            <div class="invalid-feedback" style="display:block">{{ errors.captcha }}</div>
+                                                        {% endif %}
+                                                        <div class="col-lg-12">
+                                                            <div class="contact_form_submit">
+                                                                <button class="btn btn-theme" type="submit">Enviar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {# 
+                                                                    <div class="map_area">
+                                                                        <iframe
+                                                                            src="https://www.google.com/maps/embed?pb=!1m18!..."
+                                                                            allowfullscreen=""></iframe>
+                                                                    </div> #}
+                            </div>
+                        </section>
+                        <!-- Fin Contacto -->
+                    {% endblock %}
