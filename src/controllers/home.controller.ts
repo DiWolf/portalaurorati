@@ -109,4 +109,10 @@ export class HomeController {
       });
     }
   };
+  nosotros = async(req: Request, res: Response)=>{
+      res.render("about.njk", {
+      title: "Nosotros",
+      
+    });
+  }
 }
