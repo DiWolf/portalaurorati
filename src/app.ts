@@ -11,6 +11,9 @@ import cookieParser from "cookie-parser"; // <--- ¡Asegúrate de tenerlo!
 import fs from "fs";
 //Middleware y utilidades
 import homeRoute from "@routes/portal.route";
+
+//admin 
+import adminCategoriesRouter from '@routes/adminCategories.route';
 //import { mergeLocales } from "@utils/merge-locales";
 //Rutas
 const localesPath = path.join(__dirname, "../locales");
@@ -114,6 +117,8 @@ app.use((req, res, next) => {
 });
 
 app.use("/", homeRoute);
+
+app.use("/artemis/blog/categories",adminCategoriesRouter)
 
 // Iniciar el servidor
 app.listen(3000, () => {
