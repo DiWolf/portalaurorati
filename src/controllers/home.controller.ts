@@ -115,4 +115,11 @@ export class HomeController {
       
     });
   }
+
+  privacidad = async(req: Request, res: Response)=>
+  {
+    res.render("privacidad.njk",{
+      title: "Politica de Privacidad"
+    })
+  }
 }
